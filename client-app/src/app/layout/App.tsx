@@ -10,6 +10,7 @@ import NotFound from '../../features/errors/NotFound';
 import ServerError from '../../features/errors/ServerError';
 import TestErrors from '../../features/errors/TestError';
 import HomePage from '../../features/home/HomePage';
+import ProfilePage from '../../features/profiles/ProfilePage';
 import LoginForm from '../../features/users/LoginForm';
 import ModalContainer from '../common/modals/ModalContainer';
 import { useStore } from '../stores/store';
@@ -45,6 +46,7 @@ function App() {
                 <Route exact path='/activities' component={ActivityDashboard} />
                 <Route path='/activities/:id' component={ActivityDetails} />
                 <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
+                <Route path='/profiles/:username' component={ProfilePage} />
                 <Route path='/errors' component={TestErrors} />
                 <Route path='/server-error' component={ServerError} />
                 <Route path='/login' component={LoginForm} />
